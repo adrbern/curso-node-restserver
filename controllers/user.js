@@ -70,6 +70,7 @@ const usuariosPath = (req, res = response) => {
 
 const usuariosDelete = async(req, res = response) => {
     const { id } = req.params;
+    const uid = req.uid;
 
     //  Borrado fisico
     // const usuario = await Usuario.findByIdAndDelete(id);
@@ -77,9 +78,11 @@ const usuariosDelete = async(req, res = response) => {
     // Borrado logico
     const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
 
+    const usuarioAutenticado = req.usuario;
     res.json({
         msg: "Delete API controlador",
-        id
+        usuario,
+        usuarioAutenticado
     });
 }
 
