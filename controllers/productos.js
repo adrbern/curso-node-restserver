@@ -7,7 +7,6 @@ const { Producto } = require('../models');
 // Borrar categoria - estado a false
 
 const crearProducto = async(req, res) => {
-    console.log('asdasd')
     const { estado, usuario, ...body} = req.body;
 
     const productoDb = await Producto.findOne({ nombre: body.nombre });
