@@ -19,7 +19,7 @@ const subirArchivo = async (files, extensionesValidas = ['png', 'jpg', 'jpeg', '
         if (err)
           return reject(err);
     
-        resolve(uploadPath);
+        resolve(nombreTemp);
       });
     });
 
